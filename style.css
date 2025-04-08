@@ -179,6 +179,11 @@ header,
 }
 
 footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: var(--space-2xl);
+    padding-bottom: var(--space-2xl);
     background-color: var(--color-extra-light);
 }
 
@@ -190,14 +195,6 @@ footer > img {
 footer p {
     color: var(--color-dark);
     font-size: var(--size-step-1);
-    margin-bottom: 0;
-}
-
-footer.region {
-    margin-bottom: 0;
-}
-
-footer.region:last-child {
     margin-bottom: 0;
 }
 
@@ -270,7 +267,7 @@ footer .social-icons {
         flex-wrap: wrap;
     }
 
-    footer.region {
+    footer {
         display: grid;
         grid-template-columns: 1fr 2fr 1fr;
         justify-items: center;
