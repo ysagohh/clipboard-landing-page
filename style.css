@@ -1,0 +1,290 @@
+:root {
+    --color-primary: hsl(171, 66%, 44%); /* Strong Cyan */
+    --color-primary-glare: hsl(171, 54%, 60%);
+    --color-primary-shadow: hsl(171, 88%, 35%);
+    --color-secondary: hsl(233, 100%, 69%); /* Light Blue */
+    --color-secondary-glare: hsl(233, 75%, 75%);
+    --color-secondary-shadow: hsl(233, 51%, 55%);
+    --color-dark: hsl(210, 10%, 33%); /* Dark Grayish Blue */
+    --color-light: hsl(201, 11%, 66%); /* Grayish Blue */
+    --color-extra-light: hsl(220, 1%, 97%);
+    --font-base: "Bai Jamjuree", sans-serif;
+    --font-weight-regular: 400;
+    --font-weight-heavy: 600;
+
+    /* Responsive font sizes made with Utopia.fyi */
+    --size-step--2: clamp(0.6076rem, 0.5828rem + 0.124vw, 0.6944rem);
+    --size-step--1: clamp(0.7292rem, 0.6994rem + 0.1488vw, 0.8333rem);
+    --size-step-0: clamp(0.875rem, 0.8393rem + 0.1786vw, 1rem);
+    --size-step-1: clamp(1.05rem, 1.0071rem + 0.2143vw, 1.2rem);
+    --size-step-2: clamp(1.26rem, 1.2086rem + 0.2571vw, 1.44rem);
+    --size-step-3: clamp(1.512rem, 1.4503rem + 0.3086vw, 1.728rem);
+    --size-step-4: clamp(1.8144rem, 1.7403rem + 0.3703vw, 2.0736rem);
+    --size-step-5: clamp(2.1773rem, 2.0884rem + 0.4443vw, 2.4883rem);
+
+    /* Responsive space sizes made with Utopia.fyi */
+    --space-3xs: 0.25rem;
+    --space-2xs: 0.4375rem;
+    --space-xs: 0.6875rem;
+    --space-s: 0.875rem;
+    --space-m: 1.3125rem;
+    --space-l: 1.75rem;
+    --space-xl: 2.625rem;
+    --space-2xl: 3.5rem;
+    --space-3xl: 5.25rem;
+
+    --gutter: var(--space-s);
+    --border-radius: var(--size-step-3);
+    --transition-base: 250ms ease;
+    --flow-space: var(--space-l);
+    --region-space: 10rem;
+}
+
+body {
+    color: var(--color-dark);
+    font-size: var(--size-step-1);
+    font-family: var(--font-base);
+    font-weight: var(--font-weight-regular);
+    line-height: 1.6;
+    text-align: center;
+    background-image: url(./images/bg-header-mobile.png);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: 100%;
+}
+
+.wrapper {
+    margin: 0 8%;
+}
+
+h1, h2, h3 {
+    line-height: 1;
+    font-weight: var(--font-weight-heavy);
+}
+
+h1 {
+    font-size: var(--size-step-5);
+}
+
+h2 {
+    font-size: var(--size-step-4);
+}
+
+h3 {
+    font-size: var(--size-step-3);
+}
+
+p {
+    color: var(--color-light);
+    max-width: 60ch;
+    margin-top: var(--space-m);
+    margin-bottom: var(--space-xl);
+}
+
+header > img {
+    margin: var(--space-2xl) 0 var(--space-m) 0;
+}
+
+div.buttons {
+    width: min(45ch, 100%);
+}
+
+button {
+    display: block;
+    color: white;
+    font-weight: var(--font-weight-heavy);
+    border: unset;
+    border-radius: var(--border-radius);
+    padding: var(--size-step-1) 0;
+    width: 100%;
+}
+
+div.buttons > * + * {
+    margin-top: var(--space-m);
+}
+
+button:hover,
+#footer-links p:hover,
+.social-icons img:hover {
+    cursor: pointer;
+    transition: var(--transition-base);
+}
+
+button.primary-btn {
+    background-color: var(--color-primary);
+    filter: drop-shadow(2px 5px 8px var(--color-primary-glare));
+    box-shadow: inset 0 -3px 0 0 var(--color-primary-shadow);
+}
+
+button.primary-btn:hover {
+    background-color: var(--color-primary-glare);
+    box-shadow: inset 0 -3px 0 0 var(--color-primary);
+}
+
+button.secondary-btn {
+    background-color: var(--color-secondary);
+    filter: drop-shadow(2px 5px 8px var(--color-secondary-glare));
+    box-shadow: inset 0 -3px 0 0 var(--color-secondary-shadow);
+}
+
+button.secondary-btn:hover {
+    background-color: var(--color-secondary-glare);
+    box-shadow: inset 0 -3px 0 0 var(--color-secondary);
+}
+
+#footer-links p:hover {
+    color: var(--color-primary);
+}
+
+.social-icons img:hover {
+    filter: invert(52%) sepia(90%) saturate(351%) hue-rotate(121deg) brightness(99%) contrast(90%);
+}
+
+.flow > * + * {
+    margin-top: var(--flow-space, 1em);
+}
+
+.flow p {
+    margin-bottom: 0;
+}
+
+.flow > p {
+    margin-bottom: var(--space-xl);
+}
+
+.region {
+    padding-top: var(--space-2xl);
+    padding-bottom: var(--space-2xl);
+}
+
+header,
+.region,
+.features,
+.workflow-feature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logos img {
+    margin: 2rem 0;
+}
+
+#workflow img {
+    margin: var(--space-m) 0;
+}
+
+.region:last-child {
+    margin-bottom: var(--space-3xl);
+}
+
+footer {
+    background-color: var(--color-extra-light);
+}
+
+footer > img {
+    width: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+footer p {
+    color: var(--color-dark);
+    font-size: var(--size-step-1);
+    margin-bottom: 0;
+}
+
+footer .social-icons {
+    display: flex;
+    gap: var(--space-xl);
+    margin-top: var(--space-2xl);
+}
+
+@media only screen and (min-width: 800px) {
+    body {
+        background-image: url(./images/bg-header-desktop.png);
+    }
+
+    p.larger {
+        font-size: var(--size-step-2);
+    }
+
+    p.smaller {
+        font-size: var(--size-step-0);
+    }
+
+    div.buttons > * + * {
+        margin-top: unset;
+    }
+
+    button {
+        display: inline;
+        width: 20ch;
+        margin: 0 var(--space-3xs);
+    }
+
+    .two-columns {
+        display: grid;
+        grid-template-columns: 1fr 20vw;
+    }
+
+    #img-computer img {
+        min-width: 789px;
+        min-height: 600px;
+        transform: translateX(calc(-5rem - 15vw));
+    }
+
+    .features {
+        transform: translateX(calc(-5rem - 5vw));
+    }
+
+    .snippet-feature {
+        text-align: left;
+    }
+
+    #workflow-features {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-m);
+    }
+
+    .workflow-feature {
+        margin-top: 0;
+    }
+
+    .workflow-feature p {
+        max-width: 35ch;
+    }
+
+    .logos {
+        flex-direction: row;
+        justify-content: center;
+        gap: var(--space-s) var(--space-3xl);
+        flex-wrap: wrap;
+    }
+
+    footer.region {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        justify-items: center;
+    }
+
+    #footer-links {
+        justify-self: left;
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-flow: column;
+        text-align: left;
+        gap: var(--space-s) var(--space-3xl);
+    }
+
+    #footer-links p {
+        margin: 0;
+    }
+
+    footer .social-icons {
+        display: flex;
+        gap: var(--space-m);
+        margin-top: 0;
+    }
+}
