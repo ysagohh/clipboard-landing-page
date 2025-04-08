@@ -266,6 +266,11 @@ footer .social-icons {
         display: grid;
         grid-template-columns: 1fr 2fr 1fr;
         justify-items: center;
+        margin-bottom: 0;
+    }
+
+    footer > img {
+        margin-bottom: 0;
     }
 
     #footer-links {
